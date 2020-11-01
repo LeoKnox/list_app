@@ -1,6 +1,10 @@
 from django.db import models
 
-class My_List(models.Model):
-    item = models.CharField(max_length=50)
-    qty = models.IntegerField()
-    
+class Room(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    width = models.IntegerField()
+    length = models.IntegerField()
+
+def __str__(self):
+    return self.title

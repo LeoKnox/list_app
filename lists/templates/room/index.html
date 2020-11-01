@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Creating Dungeons Learning Programming</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Actions</th>
+    </tr>
+    {% for room in rooms %}
+    <tr>
+        <td><a href={% url 'room' room.id %}>{{ room.name }}</a></td>
+        <td>{{ room.width }}</td>
+        <td>{{ room.length }}</td>
+        <td><a href={% url 'edit' room.id %}>Edit</a> <span>&#8226;</span> <a href={% url 'delete' room.id %}>Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

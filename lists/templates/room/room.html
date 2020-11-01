@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ room_data.name }} Room</h1>
+
+<p>Width: <label>{{ room_data.width }}</label> Length: <label>{{ room_data.length }}</label></p>
+<p>{{ room_data.description }}</p>
+{% endblock %}

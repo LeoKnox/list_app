@@ -1,10 +1,15 @@
 from django.db import models
 
-class Room(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-    width = models.IntegerField()
-    length = models.IntegerField()
+class My_List(models.Model):
+    item = models.CharField(max_length=50)
+    qty = models.IntegerField()
+    subsititute = models.CharField(max_length=50, null=True)
+    urgent = models.BooleanField()
 
-def __str__(self):
-    return self.title
+class Sub_List(models.Model):
+    recipes = models.CharField(max_length=50)
+    list = models.ForeignKey(My_List, on_delete=models.CASCADE)
+
+class Store_List(models.Model):
+    store_name = models.CharField(max_length = 50)
+    lists = models.ManyToManyField(My_List)

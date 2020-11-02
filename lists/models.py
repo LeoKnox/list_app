@@ -13,3 +13,6 @@ class Sub_List(models.Model):
 class Store_List(models.Model):
     store_name = models.CharField(max_length = 50)
     lists = models.ManyToManyField(My_List)
+
+def __str__(self):
+    return self.title

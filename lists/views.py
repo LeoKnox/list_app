@@ -10,4 +10,4 @@ def index(request):
 def create(request):
     context = {}
     context['form'] = ListForm()
-    return render(request, 'create.html')
+    return render(request, 'create.html', context)

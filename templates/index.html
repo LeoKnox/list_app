@@ -1,0 +1,13 @@
+<h1>Welcome to Home</h1>
+
+{% for list in lists %}
+<p>item: {{list.item}}</p>
+<p>qty: {{list.qty}}</p>
+<p>substitute: {{list.substitute}}</p>
+<p> {% if list.urgent %}
+        Buy now!
+    {% else %}
+        Can wait if it has to
+    {% endif %}
+</p>
+{% endfor %}

@@ -4,5 +4,14 @@
     {% csrf_token %}
     <label for="create">Item: </label>
     <input id="create" type="text" name="create" value="{{ current_name }}">
+
+    <label for="create">Quantity: </label>
+    <input id="create" type="number" name="create" value="{{ qty }}">
+
+    <label for="create">Substitute: </label>
+    <input id="create" type="text" name="create" value="{{ subsititute }}">
+    
+    <label for="create">Urgent</label>
+    <input id="create" type="checkbox" name="create" value="{{ urgent }}">
     <input type="submit" value="Create">
 </form>

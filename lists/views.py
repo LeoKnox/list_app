@@ -9,5 +9,9 @@ def index(request):
 
 def create(request):
     context = {}
-    context['form'] = ListForm()
+
+    form = ListForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context['form'] = form
     return render(request, 'create.html', context)
